@@ -65,7 +65,7 @@ void setup(void){
 
   // Esperando se conectar
   while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
+    delay(500); // meio segundo
     Serial.print(".");
   }
   Serial.println("");
@@ -94,7 +94,7 @@ void setup(void){
 void loop(void){
   server.handleClient();
   int presenca = analogRead(pinor_pir);
-  if presenca == 0 {
+  if presenca == 1 {
     digitalWrite(pino_led, HIGH);
   } else {
       delay(5000); // 5 segundos para nao apagar instantaneamente
